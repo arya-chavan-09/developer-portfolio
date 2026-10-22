@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-theme="ink">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arya Chavan · Backend Developer</title>
+  <meta name="description" content="Backend developer portfolio, served by a real API. Open the terminal and run help.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body data-mode="terminal">
+  <div class="window">
+    <header class="bar">
+      <div class="bar-title">
+        <span id="dot" class="dot" aria-hidden="true"></span>
+        <span id="who">guest@portfolio</span>
+        <span id="api-state" class="dim">checking API…</span>
+      </div>
+      <div class="bar-actions">
+        <div class="seg" role="group" aria-label="View mode">
+          <button type="button" id="m-term" aria-pressed="true">Terminal</button>
+          <button type="button" id="m-gui" aria-pressed="false">Visual</button>
+        </div>
+        <button type="button" id="theme-btn" class="ghost" aria-label="Switch colour theme">Theme</button>
+      </div>
+    </header>
+
+    <section id="term" class="term" aria-label="Terminal">
+      <div id="screen" class="screen" role="log" aria-live="polite"></div>
+      <label class="prompt" for="cmd">
+        <span id="ps1" class="ps1">guest@portfolio:~$</span>
+        <input id="cmd" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+          aria-label="Command">
+      </label>
+    </section>
+
+    <nav id="chips" class="chips" aria-label="Quick commands">
+      <button type="button" data-cmd="whoami">whoami</button>
+      <button type="button" data-cmd="projects">projects</button>
+      <button type="button" data-cmd="skills">skills</button>
+      <button type="button" data-cmd="experience">experience</button>
+      <button type="button" data-cmd="sql SELECT name, level FROM skills WHERE level = 5">sql</button>
+      <button type="button" data-cmd="status">status</button>
+      <button type="button" data-cmd="contact">contact</button>
+      <button type="button" data-cmd="help">help</button>
+    </nav>
+
+    <main id="gui" class="gui" hidden></main>
+  </div>
+  <script src="/static/terminal.js"></script>
+</body>
+
+</html>

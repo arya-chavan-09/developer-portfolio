@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: developer-portfolio
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: READONLY_DATABASE_URL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: TRUSTED_PROXY_HOPS
+        value: "1"
